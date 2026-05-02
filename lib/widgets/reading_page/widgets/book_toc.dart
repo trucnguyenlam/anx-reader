@@ -317,8 +317,8 @@ class _BookTocState extends ConsumerState<BookToc> {
       height: 35,
       child: SearchBar(
         controller: searchBarController,
-        shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
-        padding: const WidgetStatePropertyAll<EdgeInsets>(
+        shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
+        padding: const MaterialStatePropertyAll<EdgeInsets>(
             EdgeInsets.symmetric(horizontal: 16.0)),
         leading: const Icon(Icons.search),
         trailing: [

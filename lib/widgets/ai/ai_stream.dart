@@ -168,8 +168,8 @@ class AiStreamState extends ConsumerState<AiStream> {
 
   Widget _buildThinkingPanel(List<Widget> children) {
     final theme = Theme.of(context);
-    final accentColor = theme.colorScheme.secondary.withValues(alpha: 0.82);
-    final subtleColor = theme.colorScheme.secondary.withValues(alpha: 0.68);
+    final accentColor = theme.colorScheme.secondary.withOpacity(0.82);
+    final subtleColor = theme.colorScheme.secondary.withOpacity(0.68);
     return Theme(
       data: theme.copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(
@@ -201,7 +201,7 @@ class AiStreamState extends ConsumerState<AiStream> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: subtleColor.withValues(alpha: 0.55),
+                  color: subtleColor.withOpacity(0.55),
                   width: 2,
                 ),
               ),

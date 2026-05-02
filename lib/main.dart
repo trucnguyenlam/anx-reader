@@ -21,13 +21,11 @@ import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:heroine/heroine.dart';
 import 'package:provider/provider.dart' as provider;
 import 'package:window_manager/window_manager.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 late AudioHandler audioHandler;
-final heroineController = HeroineController();
 
 /// Whether macOS data migration is needed (checked at startup)
 bool _needsMigration = false;
@@ -108,8 +106,8 @@ class _MyAppState extends ConsumerState<MyApp>
   @override
   Future<void> onWindowClose() async {
     await Server().stop();
-    await webViewEnvironment?.dispose();
-    webViewEnvironment = null;
+    // await webViewEnvironment?.dispose();
+    true; //null;
     await DBHelper.close();
     await windowManager.destroy();
   }
@@ -188,7 +186,6 @@ class _MyAppState extends ConsumerState<MyApp>
             ),
             navigatorObservers: [
               FlutterSmartDialog.observer,
-              heroineController
             ],
             builder: FlutterSmartDialog.init(),
             navigatorKey: navigatorKey,

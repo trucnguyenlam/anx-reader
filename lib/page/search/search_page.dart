@@ -110,7 +110,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                spacing: 24,
+                
                 children: [
                   _SearchResult(
                       title: L10n.of(context).books,
@@ -218,7 +218,7 @@ class _SearchNoteResult extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(spacing: 18, children: [
+    return Column( children: [
       ...group.map((item) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

@@ -18,10 +18,10 @@ Future<void> shareFile({
 
   showLoading();
   final box = navigatorKey.currentContext!.findRenderObject() as RenderBox?;
-  await SharePlus.instance.share(ShareParams(
-    title: title ?? filePath?.split('/').last ?? 'file',
-    files: [XFile(filePath ?? '')],
+  await Share.shareXFiles(
+    [XFile(filePath ?? '')], 
+    text: title ?? filePath?.split('/').last ?? 'file',
     sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
-  ));
+  );
   SmartDialog.dismiss();
 }

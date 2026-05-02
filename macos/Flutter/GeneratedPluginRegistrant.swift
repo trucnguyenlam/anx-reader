@@ -12,7 +12,6 @@ import battery_plus
 import connectivity_plus
 import desktop_drop
 import device_info_plus
-import file_picker
 import flutter_inappwebview_macos
 import flutter_tts
 import in_app_purchase_storekit
@@ -21,7 +20,7 @@ import path_provider_foundation
 import screen_retriever_macos
 import share_plus
 import shared_preferences_foundation
-import sqflite_darwin
+import sqflite
 import sqlite3_flutter_libs
 import url_launcher_macos
 import wakelock_plus
@@ -35,7 +34,6 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   ConnectivityPlusPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlusPlugin"))
   DesktopDropPlugin.register(with: registry.registrar(forPlugin: "DesktopDropPlugin"))
   DeviceInfoPlusMacosPlugin.register(with: registry.registrar(forPlugin: "DeviceInfoPlusMacosPlugin"))
-  FilePickerPlugin.register(with: registry.registrar(forPlugin: "FilePickerPlugin"))
   InAppWebViewFlutterPlugin.register(with: registry.registrar(forPlugin: "InAppWebViewFlutterPlugin"))
   FlutterTtsPlugin.register(with: registry.registrar(forPlugin: "FlutterTtsPlugin"))
   InAppPurchasePlugin.register(with: registry.registrar(forPlugin: "InAppPurchasePlugin"))

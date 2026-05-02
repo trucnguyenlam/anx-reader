@@ -45,13 +45,13 @@ ThemeData colorSchema(
           Brightness.light => ColorScheme.fromSeed(
               seedColor: seedColor,
               brightness: Brightness.light,
-              surfaceContainer: Color(0xFFFFFFFF),
+              
               surface: lightGropedBackground,
             ),
           Brightness.dark => ColorScheme.fromSeed(
               seedColor: seedColor,
               brightness: Brightness.dark,
-              surfaceContainer: Color(0xFF2C2C2E),
+              
               surface: darkGropedBackground,
             ),
         };
@@ -77,15 +77,15 @@ ThemeData colorSchema(
 
   return themeData
       .copyWith(
-          sliderTheme: const SliderThemeData(year2023: false),
+          sliderTheme: const SliderThemeData(),
           progressIndicatorTheme:
-              const ProgressIndicatorThemeData(year2023: false),
+              const ProgressIndicatorThemeData(),
           scaffoldBackgroundColor: gropedBackgroundColor,
           bottomSheetTheme: BottomSheetThemeData()
-              .copyWith(backgroundColor: gropedBackgroundColor),
+              ,
           drawerTheme: DrawerThemeData()
-              .copyWith(backgroundColor: gropedBackgroundColor),
-          dialogTheme: DialogThemeData()
-              .copyWith(backgroundColor: gropedBackgroundColor))
+              ,
+          
+              )
       .useSystemChineseFont(brightness);
 }

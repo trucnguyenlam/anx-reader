@@ -5,6 +5,7 @@ import 'package:anx_reader/config/shared_preference_provider.dart';
 import 'package:anx_reader/l10n/generated/L10n.dart';
 import 'package:anx_reader/main.dart';
 import 'package:anx_reader/utils/get_path/get_cache_dir.dart';
+import 'package:anx_reader/utils/langchain_serialization.dart';
 import 'package:langchain_core/chat_models.dart';
 
 class AiCacheEntry {
@@ -40,9 +41,9 @@ class AiCacheEntry {
     if (rawMessages is List) {
       for (final item in rawMessages) {
         if (item is Map<String, dynamic>) {
-          messages.add(ChatMessage.fromMap(item));
+          messages.add(ChatMessageSerialization.fromMap(item));
         } else if (item is Map) {
-          messages.add(ChatMessage.fromMap(
+          messages.add(ChatMessageSerialization.fromMap(
             item.map((key, value) => MapEntry(key.toString(), value)),
           ));
         }

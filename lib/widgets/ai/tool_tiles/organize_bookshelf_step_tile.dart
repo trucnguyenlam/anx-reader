@@ -223,7 +223,7 @@ class _OrganizeBookshelfStepTileState
 
     return FilledContainer(
       width: double.infinity,
-      color: theme.colorScheme.surfaceContainer,
+      color: theme.colorScheme.surface,
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.only(bottom: 8),
       radius: 10,
@@ -238,7 +238,7 @@ class _OrganizeBookshelfStepTileState
             Padding(
               padding: const EdgeInsets.only(top: 4.0),
               child: Wrap(
-                spacing: 6,
+                
                 runSpacing: 4,
                 children: chips,
               ),
@@ -304,7 +304,7 @@ class _OrganizeBookshelfStepTileState
     ThemeData theme,
   ) {
     return FilledContainer(
-      color: theme.colorScheme.surfaceContainer,
+      color: theme.colorScheme.surface,
       padding: const EdgeInsets.all(8),
       radius: 10,
       child: Column(

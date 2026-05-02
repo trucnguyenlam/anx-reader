@@ -49,7 +49,7 @@ class AiProviderListPage extends ConsumerWidget {
                 if (!hasValidKey)
                   Text(
                     l10n.settingsAiProviderNoValidKeys,
-                    style: TextTheme.of(context).bodySmall?.copyWith(
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.error,
                         ),
                   ),
@@ -61,8 +61,8 @@ class AiProviderListPage extends ConsumerWidget {
                 if (isSelected)
                   Chip(
                     label: Text(l10n.settingsAiProviderDefault),
-                    labelStyle: TextTheme.of(context).labelSmall,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    labelStyle: Theme.of(context).textTheme.labelSmall,
+                    
                   )
                 else
                   TextButton(

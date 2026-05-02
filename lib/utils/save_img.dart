@@ -81,9 +81,10 @@ class SaveImg {
 
       final SaveResult result = await SaverGallery.saveImage(
         img,
-        fileName: '$name.$extension',
-        skipIfExists: false,
+        quality: 100,
+        name: '$name',
         androidRelativePath: "Pictures/AnxReader",
+        androidExistNotSave: false,
       );
 
       SmartDialog.dismiss();

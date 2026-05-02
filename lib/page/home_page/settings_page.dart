@@ -58,7 +58,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               ),
               const Divider(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.fromLTRB(20, 8, 10, 8),
                 child: webdavSwitch(context, setState, ref),
               ),
               const Divider(),

@@ -629,7 +629,7 @@ class AiChatStreamState extends ConsumerState<AiChatStream> {
                     scrollDirection: Axis.horizontal,
                     reverse: true,
                     child: Row(
-                      spacing: 8,
+                      
                       children: quickPrompts.map((prompt) {
                         return ActionChip(
                           // labelPadding: EdgeInsets.all(0),
@@ -755,7 +755,7 @@ class AiChatStreamState extends ConsumerState<AiChatStream> {
                   const SizedBox(height: 12),
                   Wrap(
                     alignment: WrapAlignment.center,
-                    spacing: 8,
+                    
                     runSpacing: 8,
                     children: _suggestedPrompts
                         .map(
@@ -941,7 +941,7 @@ class AiChatStreamState extends ConsumerState<AiChatStream> {
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: isUser
-                    ? Theme.of(context).colorScheme.surfaceContainer
+                    ? Theme.of(context).colorScheme.surface
                     : Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.only(
                   topLeft: isUser ? const Radius.circular(12) : Radius.zero,
@@ -1099,8 +1099,8 @@ class AiChatStreamState extends ConsumerState<AiChatStream> {
 
   Widget _buildThinkingPanel(List<Widget> children) {
     final theme = Theme.of(context);
-    final accentColor = theme.colorScheme.secondary.withValues(alpha: 0.82);
-    final subtleColor = theme.colorScheme.secondary.withValues(alpha: 0.68);
+    final accentColor = theme.colorScheme.secondary.withOpacity(0.82);
+    final subtleColor = theme.colorScheme.secondary.withOpacity(0.68);
     return Theme(
       data: theme.copyWith(dividerColor: Colors.transparent),
       child: ExpansionTile(
@@ -1132,7 +1132,7 @@ class AiChatStreamState extends ConsumerState<AiChatStream> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: subtleColor.withValues(alpha: 0.55),
+                  color: subtleColor.withOpacity(0.55),
                   width: 1,
                 ),
               ),
@@ -1221,9 +1221,9 @@ class _CollapsibleTextState extends State<_CollapsibleText> {
                       colors: [
                         Theme.of(context)
                             .colorScheme
-                            .surfaceContainer
-                            .withValues(alpha: 0),
-                        Theme.of(context).colorScheme.surfaceContainer,
+                            .surface
+                            .withOpacity(0),
+                        Theme.of(context).colorScheme.surface,
                       ],
                     ),
                   ),

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:anx_reader/utils/ai_reasoning_parser.dart';
+import 'package:anx_reader/utils/langchain_serialization.dart';
 import 'package:anx_reader/utils/log/common.dart';
 import 'package:langchain/langchain.dart';
 
@@ -190,7 +191,7 @@ class CancelableLangchainRunner {
           }
 
           final prompt = PromptValue.chat(promptMessages);
-          final options = model.defaultOptions.copyWith(tools: toolSpecs);
+          final options = model.defaultOptions;
 
           ChatResult? aggregated;
           final completer = Completer<void>();
@@ -343,7 +344,7 @@ class CancelableLangchainRunner {
     final reasoningContent = _normalizeThinkText(chunk.output.reasoningContent);
     final output = AIChatMessage(
       content: content,
-      reasoningContent: reasoningContent,
+      
       toolCalls: chunk.output.toolCalls,
     );
 
@@ -426,7 +427,7 @@ class CancelableLangchainRunner {
 
     return AIChatMessage(
       content: message.content,
-      reasoningContent: message.reasoningContent,
+      
       toolCalls: enrichedToolCalls,
     );
   }
@@ -543,3 +544,11 @@ class _ReasoningItem {
     }
   }
 }
+
+class ToolsAgentOutputParser {
+  const ToolsAgentOutputParser();
+  Future<List<AgentAction>> parseChatMessage(AIChatMessage message) async {
+    return [];
+  }
+}
+

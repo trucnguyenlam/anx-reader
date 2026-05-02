@@ -34,7 +34,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-WebViewEnvironment? webViewEnvironment;
+
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -54,35 +54,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     WidgetsBinding.instance.addPostFrameCallback((_) => initAnx());
   }
 
-  Future<void> _checkWindowsWebview() async {
-    final availableVersion = await WebViewEnvironment.getAvailableVersion();
-    AnxLog.info('WebView2 version: $availableVersion');
 
-    if (availableVersion == null) {
-      SmartDialog.show(
-        builder: (context) => AlertDialog(
-          title: const Icon(Icons.error),
-          content: Text(L10n.of(context).webview2NotInstalled),
-          actions: [
-            TextButton(
-              onPressed: () => {
-                launchUrl(
-                    Uri.parse(
-                        'https://developer.microsoft.com/en-us/microsoft-edge/webview2'),
-                    mode: LaunchMode.externalApplication)
-              },
-              child: Text(L10n.of(context).webview2Install),
-            ),
-          ],
-        ),
-      );
-    } else {
-      webViewEnvironment = await WebViewEnvironment.create(
-        settings: WebViewEnvironmentSettings(
-            userDataFolder: (await getAnxTempDir()).path),
-      );
-    }
-  }
 
   void _showDbUpdatedDialog() {
     SmartDialog.show(
@@ -115,9 +87,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     }
     loadDefaultFont();
 
-    if (AnxPlatform.isWindows) {
-      await _checkWindowsWebview();
-    }
+
 
     if (AnxPlatform.isAndroid || AnxPlatform.isIOS || AnxPlatform.isOhos) {
       receiveShareIntent(ref);
@@ -188,7 +158,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     void onBottomTap(int index, bool fromRail) {
       VibrationService.heavy();
       if (navBarItems[index]['identifier'] == 'ai' && !fromRail) {
-        showCupertinoSheet(
+        showCupertinoModalPopup(
             context: context, builder: (context) => const AiPage());
         return;
       }
@@ -289,7 +259,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     decoration: BoxDecoration(
                       color: Theme.of(context)
                           .colorScheme
-                          .surfaceContainer
+                          .surface
                           .withAlpha(123),
                       borderRadius: BorderRadius.circular(32),
                       border: Border.all(

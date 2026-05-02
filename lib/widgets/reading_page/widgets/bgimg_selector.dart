@@ -108,7 +108,7 @@ class _BgimgSelectorState extends ConsumerState<BgimgSelector> {
           onTap: onTap,
           child: Container(
             height: _itemHeight,
-            color: Theme.of(context).colorScheme.surfaceContainer,
+            color: Theme.of(context).colorScheme.surface,
             child: child,
           ),
         ),
@@ -136,7 +136,7 @@ class _BgimgSelectorState extends ConsumerState<BgimgSelector> {
         borderRadius: BorderRadius.circular(20),
         child: Container(
           height: _itemHeight,
-          color: Theme.of(context).colorScheme.surfaceContainer,
+          color: Theme.of(context).colorScheme.surface,
           child: Stack(
             clipBehavior: Clip.none,
             children: [
@@ -168,7 +168,7 @@ class _BgimgSelectorState extends ConsumerState<BgimgSelector> {
                           child: nightImage,
                         )
                       : Container(
-                          color: Theme.of(context).colorScheme.surfaceContainer,
+                          color: Theme.of(context).colorScheme.surface,
                         ),
                 ),
               ),
@@ -458,6 +458,7 @@ class _BgimgSelectorState extends ConsumerState<BgimgSelector> {
                   BgimgType.none => buildNoneBgimgItem(model),
                   BgimgType.assets => buildAssetBgimgItem(model),
                   BgimgType.localFile => buildLocalFileBgimgItem(model),
+                  _ => buildNoneBgimgItem(model),
                 };
                 if (isSelected) {
                   return Column(

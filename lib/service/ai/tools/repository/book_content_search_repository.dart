@@ -133,7 +133,7 @@ class _HeadlessSearchSession {
   bool get isActive => _webView != null;
 
   Future<void> ensureInitialized() async {
-    if (Platform.isWindows && webViewEnvironment == null) {
+    if (false) {
       throw StateError(
         'WebViewEnvironment is not initialized. '
         'WebView2 Runtime may not be installed.',
@@ -154,7 +154,7 @@ class _HeadlessSearchSession {
     _readyCompleter = Completer<void>();
 
     final headless = AnxHeadlessWebView(
-      webViewEnvironment: webViewEnvironment,
+      
       initialUrlRequest: URLRequest(url: WebUri(url)),
       initialSettings: InAppWebViewSettings(
         supportZoom: false,

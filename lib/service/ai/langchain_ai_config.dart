@@ -39,7 +39,6 @@ class LangchainAiConfig {
       temperature: temperature,
       topP: topP,
       maxTokens: maxTokens,
-      reasoningEffort: reasoningEffort.toOpenAiReasoningEffort(),
     );
   }
 
@@ -235,16 +234,6 @@ LangchainAiConfig mergeConfigs(
   );
 }
 
-extension on AiReasoningEffort {
-  ChatOpenAIReasoningEffort? toOpenAiReasoningEffort() {
-    return switch (this) {
-      AiReasoningEffort.auto => null,
-      AiReasoningEffort.low => ChatOpenAIReasoningEffort.low,
-      AiReasoningEffort.medium => ChatOpenAIReasoningEffort.medium,
-      AiReasoningEffort.high => ChatOpenAIReasoningEffort.high,
-    };
-  }
-}
 
 Map<String, dynamic>? mergeMaps(
   Map<String, dynamic>? base,

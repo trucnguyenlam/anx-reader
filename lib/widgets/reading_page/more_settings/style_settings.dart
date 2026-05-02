@@ -44,7 +44,7 @@ class StyleSlider extends StatelessWidget {
         ),
         Expanded(
           child: Slider(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            
             value: value,
             onChanged: enabled ? onChanged : null,
             min: min,
@@ -166,7 +166,7 @@ class _StyleSettingsState extends State<StyleSettings> {
               ),
         Expanded(
           child: Slider(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            
             value: bookStyle.topMargin,
             onChanged: (double value) {
               setState(() {
@@ -192,7 +192,7 @@ class _StyleSettingsState extends State<StyleSettings> {
               ),
         Expanded(
           child: Slider(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            
             value: bookStyle.bottomMargin,
             onChanged: (double value) {
               setState(() {

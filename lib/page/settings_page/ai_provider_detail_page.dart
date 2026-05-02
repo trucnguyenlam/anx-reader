@@ -269,14 +269,14 @@ class _AiProviderDetailPageState extends ConsumerState<AiProviderDetailPage> {
         shape: const Border(),
         collapsedShape: const Border(),
         iconColor: accent,
-        collapsedIconColor: accent.withValues(alpha: 0.82),
+        collapsedIconColor: accent.withOpacity(0.82),
         title: Row(
           children: [
             Container(
               width: 34,
               height: 34,
               decoration: BoxDecoration(
-                color: accent.withValues(alpha: 0.14),
+                color: accent.withOpacity(0.14),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -303,7 +303,7 @@ class _AiProviderDetailPageState extends ConsumerState<AiProviderDetailPage> {
         ),
         children: [
           DropdownButtonFormField<AiReasoningEffort>(
-            initialValue: _reasoningEffort,
+            value: _reasoningEffort,
             decoration: InputDecoration(
               labelText: l10n.settingsAiProviderReasoningEffort,
               border: const OutlineInputBorder(),

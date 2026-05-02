@@ -71,10 +71,10 @@ class _TranslationMenuState extends State<TranslationMenu> {
     return PointerInterceptor(
       child: MenuAnchor(
         style: MenuStyle(
-          backgroundColor: WidgetStateProperty.all(
+          backgroundColor: MaterialStateProperty.all(
             Theme.of(context).colorScheme.secondaryContainer,
           ),
-          maximumSize: WidgetStateProperty.all(const Size(300, 300)),
+          maximumSize: MaterialStateProperty.all(const Size(300, 300)),
         ),
         controller: menuController,
         menuChildren: [

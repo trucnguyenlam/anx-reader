@@ -27,7 +27,7 @@ abstract class BaseRoundedContainer extends StatelessWidget {
   final Curve animationCurve;
 
   BorderRadiusGeometry get _borderRadius =>
-      BorderRadiusGeometry.circular(radius ?? _defaultRadius);
+      BorderRadius.circular(radius ?? _defaultRadius);
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +41,8 @@ abstract class BaseRoundedContainer extends StatelessWidget {
       height: height,
       constraints: constraints,
       decoration: decoration(context, borderRadius),
-      child: ClipRSuperellipse(
-        borderRadius: borderRadius,
+      child: ClipRRect(
+        borderRadius: borderRadius as BorderRadius,
         child: Container(
           padding: padding,
           child: child,
@@ -64,8 +64,8 @@ abstract class BaseRoundedContainer extends StatelessWidget {
   }) {
     return ShapeDecoration(
       color: color,
-      shape: RoundedSuperellipseBorder(
-        borderRadius: borderRadius,
+      shape: RoundedRectangleBorder(
+        borderRadius: borderRadius as BorderRadius,
         side: borderSide,
       ),
     );

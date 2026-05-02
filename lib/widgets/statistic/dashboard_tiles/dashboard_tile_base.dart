@@ -11,7 +11,6 @@ import 'package:anx_reader/widgets/statistic/dashboard_tiles/dashboard_tile_meta
 import 'package:anx_reader/widgets/statistic/dashboard_tiles/dashboard_tile_registry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:heroine/heroine.dart';
 import 'package:staggered_reorderable/staggered_reorderable.dart';
 
 /// Base class for all statistics dashboard tiles.
@@ -40,7 +39,7 @@ abstract class StatisticsDashboardTileBase {
       width: double.infinity,
       height: double.infinity,
       radius: 16,
-      color: Theme.of(context).colorScheme.surfaceContainer,
+      color: Theme.of(context).colorScheme.surface,
       child: Stack(
         children: [
           Positioned(
@@ -242,16 +241,8 @@ class DashboardTileShell extends ConsumerWidget {
     final notifier = ref.read(dashboardTilesProvider.notifier);
     final heroTag = 'dashboard_tile_${tileType.name}';
 
-    return Heroine(
+    return Hero(
       tag: heroTag,
-      flightShuttleBuilder: const FlipShuttleBuilder(
-        axis: Axis.vertical,
-        halfFlips: 1,
-      ),
-      motion: Motion.bouncySpring(
-        snapToEnd: true,
-        duration: const Duration(milliseconds: 500),
-      ),
       child: GestureDetector(
         onTap: () {
           if (!tile.canFlip) {

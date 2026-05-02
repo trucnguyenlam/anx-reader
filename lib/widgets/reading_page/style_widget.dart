@@ -82,7 +82,7 @@ class StyleWidgetState extends State<StyleWidget> {
                   widget.setCurrentPage(const BgimgSelector());
                 },
                 icon: const Icon(Icons.arrow_forward_ios),
-                iconAlignment: IconAlignment.end,
+                
                 label: Text(L10n.of(context).readingPageStyleBackground),
               )
             ],
@@ -243,7 +243,7 @@ class StyleWidgetState extends State<StyleWidget> {
         ),
         Expanded(
           child: Slider(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              
               value: bookStyle.lineHeight,
               onChanged: enabled
                   ? (double value) {
@@ -266,7 +266,7 @@ class StyleWidgetState extends State<StyleWidget> {
         ),
         Expanded(
           child: Slider(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            
             value: bookStyle.paragraphSpacing,
             onChanged: enabled
                 ? (double value) {

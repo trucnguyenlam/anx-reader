@@ -324,7 +324,6 @@ class BookStatisticItem extends StatelessWidget {
                       builder: (context) => BookDetail(book: snapshot.data!)));
             },
             child: FilledContainer(
-              margin: const EdgeInsets.only(bottom: 10),
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [

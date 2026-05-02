@@ -13,6 +13,7 @@ import 'package:anx_reader/service/ai/langchain_runner.dart';
 import 'package:anx_reader/utils/ai_reasoning_parser.dart';
 import 'package:anx_reader/utils/log/common.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:anx_reader/utils/langchain_serialization.dart';
 import 'package:langchain_core/chat_models.dart';
 import 'package:langchain_core/prompts.dart';
 

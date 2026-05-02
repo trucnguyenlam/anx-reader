@@ -88,7 +88,7 @@ class _VibrationTestPageState extends State<VibrationTestPage> {
           ),
           const SizedBox(height: 12),
           Wrap(
-            spacing: 8,
+            
             runSpacing: 8,
             children: VibrationType.values.map(
               (type) {

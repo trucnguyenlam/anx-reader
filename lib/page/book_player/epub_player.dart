@@ -1055,7 +1055,7 @@ class EpubPlayerState extends ConsumerState<EpubPlayer>
               decoration: BoxDecoration(
                 color: Theme.of(context)
                     .colorScheme
-                    .surfaceContainer
+                    .surface
                     .withAlpha(123),
                 borderRadius: BorderRadius.circular(32),
                 border: Border.all(
@@ -1211,7 +1211,7 @@ class EpubPlayerState extends ConsumerState<EpubPlayer>
   Widget buildWebviewWithIOSWorkaround(
       BuildContext context, String url, String initialCfi) {
     final webView = InAppWebView(
-      webViewEnvironment: webViewEnvironment,
+      
       initialUrlRequest: URLRequest(
         url: WebUri(
           generateUrl(

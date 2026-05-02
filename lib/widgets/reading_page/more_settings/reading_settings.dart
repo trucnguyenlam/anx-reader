@@ -355,7 +355,7 @@ class _ReadingMoreSettingsState extends State<ReadingMoreSettings> {
               }
             },
             underline: Container(),
-            dropdownColor: Theme.of(context).colorScheme.surfaceContainer,
+            dropdownColor: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(8),
             items: ReadingInfoEnum.values.map((info) {
               return DropdownMenuItem<ReadingInfoEnum>(
@@ -636,7 +636,7 @@ class _ReadingMoreSettingsState extends State<ReadingMoreSettings> {
                       style: Theme.of(context).textTheme.bodySmall),
                   const SizedBox(height: 8),
                   Wrap(
-                    spacing: 8,
+                    
                     runSpacing: 8,
                     children: lightThemes.map((theme) {
                       final isSelected = Prefs().codeHighlightTheme == theme;
@@ -661,7 +661,7 @@ class _ReadingMoreSettingsState extends State<ReadingMoreSettings> {
                       style: Theme.of(context).textTheme.bodySmall),
                   const SizedBox(height: 8),
                   Wrap(
-                    spacing: 8,
+                    
                     runSpacing: 8,
                     children: darkThemes.map((theme) {
                       final isSelected = Prefs().codeHighlightTheme == theme;

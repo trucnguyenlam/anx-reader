@@ -143,7 +143,7 @@ class _StatisticChartState extends ConsumerState<StatisticChart> {
       fontSize: 14,
     );
     return SideTitleWidget(
-        meta: meta,
+        axisSide: meta.axisSide,
         child: Text(
           widget.xLabels[value.toInt()],
           style: style,

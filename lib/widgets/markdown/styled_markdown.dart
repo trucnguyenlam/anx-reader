@@ -23,20 +23,13 @@ class StyledMarkdown extends StatelessWidget {
     final theme = Theme.of(context);
     final baseFontSize = fontSize;
     return SelectableRegion(
+      focusNode: FocusNode(),
       selectionControls: selectionControls(),
-      child: GptMarkdown(data,
+      child: TexMarkdown(data,
           followLinkColor: true,
           style:
               baseFontSize != null ? TextStyle(fontSize: baseFontSize) : null,
-          onLinkTap: (href, text) =>
-              launchUrlString(href, mode: LaunchMode.externalApplication),
-          linkBuilder: (context, text, url, style) => Text.rich(
-                text,
-                style: style.copyWith(
-                  color: theme.colorScheme.primary,
-                  decoration: TextDecoration.underline,
-                ),
-              )),
+      ),
     );
   }
 }

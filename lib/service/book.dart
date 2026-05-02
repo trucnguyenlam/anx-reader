@@ -569,7 +569,7 @@ Future<void> getBookMetadata(
   AnxLog.info("import start: book url: $bookUrl");
 
   AnxHeadlessWebView webview = AnxHeadlessWebView(
-    webViewEnvironment: webViewEnvironment,
+    
     initialUrlRequest: URLRequest(
         url: WebUri(generateUrl(
       bookUrl,

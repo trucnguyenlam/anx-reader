@@ -59,7 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       controlsPadding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: DotsDecorator(
         size: const Size(10.0, 10.0),
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        color: Theme.of(context).colorScheme.surfaceVariant,
         activeSize: const Size(22.0, 10.0),
         activeColor: Theme.of(context).colorScheme.primary,
         activeShape: const RoundedRectangleBorder(
@@ -299,12 +299,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             itemBuilder: (context, index) {
               final color = themeColors[index];
               final isSelected =
-                  color.toARGB32() == currentThemeColor.toARGB32();
+                  color.value == currentThemeColor.value;
 
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    Prefs().saveThemeToPrefs(color.toARGB32());
+                    Prefs().saveThemeToPrefs(color.value);
                   });
                 },
                 child: Container(
@@ -451,7 +451,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 decoration: BoxDecoration(
                   color: Theme.of(context)
                       .colorScheme
-                      .surfaceContainerHighest
+                      .surfaceVariant
                       .withAlpha(50),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
@@ -507,7 +507,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           decoration: BoxDecoration(
             color: Theme.of(context)
                 .colorScheme
-                .surfaceContainerHighest
+                .surfaceVariant
                 .withAlpha(50),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(

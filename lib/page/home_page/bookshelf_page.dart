@@ -219,7 +219,7 @@ class BookshelfPageState extends ConsumerState<BookshelfPage>
                     builder: (context, setStateMenu) {
                       return SingleChildScrollView(
                         child: Wrap(
-                          spacing: 8,
+                          
                           runSpacing: 8,
                           children: [
                             if (tags.isEmpty)

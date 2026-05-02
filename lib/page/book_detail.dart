@@ -556,7 +556,7 @@ class _BookDetailState extends ConsumerState<BookDetail> {
                       : Column(
                           children: [
                             Wrap(
-                              spacing: 8,
+                              
                               runSpacing: 8,
                               children: attachedTags
                                   .map(
@@ -677,7 +677,7 @@ class _BookDetailState extends ConsumerState<BookDetail> {
                     child: Text(L10n.of(context).tagsEditOrRemoveHint),
                   ),
                 Wrap(
-                  spacing: 8,
+                  
                   runSpacing: 8,
                   children: state.tags
                       .map((tag) => TagChip(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:anx_reader/service/ai/tools/ai_tool_registry.dart';
+import 'package:anx_reader/utils/langchain_serialization.dart';
 import 'package:langchain_core/chat_models.dart';
 
 class ReasoningEnvelope {
@@ -144,6 +145,7 @@ String chatMessageDisplayContent(ChatMessage message) {
     return composeReasoningEnvelope(
       answerContent: message.content,
       reasoningContent: message.reasoningContent,
+      
     );
   }
   return message.contentAsString;
@@ -156,7 +158,7 @@ AIChatMessage assistantMessageFromDisplayContent(
   final envelope = splitReasoningEnvelope(content);
   return AIChatMessage(
     content: envelope.answerContent,
-    reasoningContent: envelope.reasoningContent,
+    
     toolCalls: toolCalls,
   );
 }
@@ -303,3 +305,5 @@ String reasoningContentToPlainText(String content) {
   final result = sections.join('\n\n').trim();
   return result.isEmpty ? content : result;
 }
+
+

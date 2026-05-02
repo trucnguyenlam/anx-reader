@@ -120,8 +120,8 @@ class AnxButton extends StatelessWidget {
           return FilledButton(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,
@@ -132,8 +132,8 @@ class AnxButton extends StatelessWidget {
           return OutlinedButton(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,
@@ -144,8 +144,8 @@ class AnxButton extends StatelessWidget {
           return TextButton(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,
@@ -175,8 +175,8 @@ class AnxButton extends StatelessWidget {
           return FilledButton.icon(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,
@@ -188,8 +188,8 @@ class AnxButton extends StatelessWidget {
           return OutlinedButton.icon(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,
@@ -201,8 +201,8 @@ class AnxButton extends StatelessWidget {
           return TextButton.icon(
             onPressed: effectiveOnPressed,
             onLongPress: effectiveOnLongPress,
-            onHover: onHover,
-            onFocusChange: onFocusChange,
+            
+            
             style: style,
             focusNode: focusNode,
             autofocus: autofocus,

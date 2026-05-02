@@ -36,7 +36,7 @@ class StatisticsDashboard extends ConsumerWidget {
                       _calculateColumnUnits(constraints.maxWidth);
                   return StaggeredReorderableView.customer(
                     columnNum: crossAxisUnits,
-                    spacing: 10,
+                    
                     canDrag: true,
                     children: _buildReorderableItems(
                       context,
